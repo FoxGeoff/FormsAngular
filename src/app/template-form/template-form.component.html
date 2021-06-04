@@ -1,25 +1,75 @@
-<p>An Example HTML form</p>
-<form action="" method="GET" target="_blank" class="form-example">
+<h4>An Example HTML Form</h4>
+
+<form
+  action="/action_page.php"
+  method="GET"
+  target="_blank"
+  class="form-example"
+>
   <div class="form-example">
-    <!-- label for works with input id-->
+    <!-- label for works with "for" attribute -->
     <label for="firstName">First Name: </label>
-    <input
-      type="text"
-      id="firstName"
-      name="firstName"
-      [(ngModel)]="firstName"
-    />
+    <input type="text" id="firstName" [(ngModel)]="firstName" />
   </div>
   <div class="form-example">
     <label for="lastName">Last Name: </label>
     <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" />
   </div>
-  <div class="form-example">
-    <input type="submit" value="Submit" />
-  </div>
+  <p><input type="submit" value="Submit" /></p>
 </form>
 
-<p>These inputs have two way binding using [(ngModel)]::</p>
-<input type="text" [(ngModel)]="firstName" />
+<ul>
+  <li>
+    If you click the "Submit" button, the form-data will be sent to a page
+    called "/action_page.php".
+  </li>
+  <li>
+    "First Name" field will not be submitted, because the input element does not
+    have a name attribute.
+  </li>
+</ul>
+<hr />
 
-<input type="text" [(ngModel)]="lastName" />
+<h4>An Example Angular Template Form</h4>
+
+{{ user | json }}
+<form #testForm="ngForm">
+  <div class="form-group">
+    <label class="form-control" for="firstName">First Name</label>
+    <input
+      class="form-control"
+      type="text"
+      id="firstName"
+      name="firstName"
+      [(ngModel)]="user.firstName"
+    />
+  </div>
+  <div class="form-group">
+    <label class="form-control" for="lastName">Last Name: </label>
+    <input
+      class="form-control"
+      type="text"
+      id="lastName"
+      name="lastName"
+      [(ngModel)]="user.lastName"
+    />
+  </div>
+  <p>
+    <input type="submit" value="Submit" /> For: {{ user.firstName }}
+    {{ user.lastName }}
+  </p>
+</form>
+
+<ul>
+  <li>
+    Ref:
+    <a href="https://angular.io/guide/forms#building-a-template-driven-form"
+      >Angular Template Form</a
+    >
+  </li>
+  <li>These inputs have two way binding using [(ngModel)]</li>
+  <li>
+    Each "input" element has an id property. This is used by the "label"
+    element's for attribute to match the label to its input control
+  </li>
+</ul>
