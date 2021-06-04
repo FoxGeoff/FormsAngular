@@ -24,4 +24,8 @@ export class TemplateFormComponent implements OnInit {
     this.user.lastName = "Fox";
   }
 
+  newUser() {
+    //TODO
+    console.log(`Create a new user.`)
+  }
 }

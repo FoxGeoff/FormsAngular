@@ -9,12 +9,24 @@
   <div class="form-example">
     <!-- label for works with "for" attribute -->
     <label for="firstName">First Name: </label>
-    <input type="text" id="firstName" [(ngModel)]="firstName" />
+    <input
+      type="text"
+      id="firstName"
+      [(ngModel)]="firstName"
+      [ngModelOptions]="{ standalone: true }"
+    />
   </div>
+
   <div class="form-example">
     <label for="lastName">Last Name: </label>
-    <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" />
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      [(ngModel)]="user.lastName"
+    />
   </div>
+
   <p><input type="submit" value="Submit" /></p>
 </form>
 
@@ -44,6 +56,7 @@
       [(ngModel)]="user.firstName"
     />
   </div>
+
   <div class="form-group">
     <label class="form-control" for="lastName">Last Name: </label>
     <input
@@ -54,8 +67,10 @@
       [(ngModel)]="user.lastName"
     />
   </div>
+
   <p>
-    <input type="submit" value="Submit" /> For: {{ user.firstName }}
+    <button type="submit" (click)="newUser()">Submit</button> For:
+    {{ user.firstName }}
     {{ user.lastName }}
   </p>
 </form>
@@ -63,7 +78,8 @@
 <ul>
   <li>
     Code Ex:
-    <a href="https://stackblitz.com/angular/rlljjnxapvjr?file=src%2Fapp%2Fhero-form%2Fhero-form.component.html"
+    <a
+      href="https://stackblitz.com/angular/rlljjnxapvjr?file=src%2Fapp%2Fhero-form%2Fhero-form.component.html"
       >Angular Template Form Code</a
     >
   </li>
