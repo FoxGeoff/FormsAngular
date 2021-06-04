@@ -4,6 +4,8 @@ export class User {
   id: number | undefined
   firstName!: string;
   lastName!: string;
+
+  constructor() {  }
 }
 @Component({
   selector: 'app-template-form',
@@ -12,7 +14,7 @@ export class User {
 })
 export class TemplateFormComponent implements OnInit {
 
-  user = new User;
+  user = new User() ;
   firstName = "Jane";
   lastName = "Doe";
 
@@ -25,7 +27,12 @@ export class TemplateFormComponent implements OnInit {
   }
 
   newUser() {
-    //TODO
-    console.log(`Create a new user.`)
+
+    this.user = new User();
+    this.user.firstName = "";
+    this.user.lastName = "";
+
+      // debug
+      console.log(`Create a new user ${this.user.id}`)
   }
 }
