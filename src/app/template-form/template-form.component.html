@@ -1,1 +1,25 @@
-<p>template-form works!</p>
+<p>An Example HTML form</p>
+<form action="" method="GET" target="_blank" class="form-example">
+  <div class="form-example">
+    <!-- label for works with input id-->
+    <label for="firstName">First Name: </label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      [(ngModel)]="firstName"
+    />
+  </div>
+  <div class="form-example">
+    <label for="lastName">Last Name: </label>
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" />
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Submit" />
+  </div>
+</form>
+
+<p>These inputs have two way binding using [(ngModel)]::</p>
+<input type="text" [(ngModel)]="firstName" />
+
+<input type="text" [(ngModel)]="lastName" />
