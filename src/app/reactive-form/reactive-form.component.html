@@ -1,1 +1,6 @@
-<p>reactive-form works!</p>
+<h3>Example reactive form</h3>
+
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+<p>Value: {{ name.value }}</p>
+<button (click)="updateName()">Update Name</button>
